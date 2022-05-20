@@ -415,7 +415,7 @@ const chooseCategory = (category) => {
                         { 'text-lg font-bold': index == 1 || index == 2 },
                       ]"
                     >
-                      {{ user.score }}
+                      {{ parseFloat(user.score).toFixed(2) }}
                     </td>
                   </tr>
                 </tbody>
