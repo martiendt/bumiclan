@@ -173,7 +173,7 @@ const getFisik = () => {
   for (let i = 0; i < data.length; i++) {
     let a = 0;
     if (data[i].gender === "male") {
-      a = 40 - Number(data[i].fisik);
+      a = 36 - Number(data[i].fisik);
     } else {
       a = 29 - Number(data[i].fisik);
     }
