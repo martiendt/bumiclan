@@ -237,6 +237,18 @@ const getKpiTeam = () => {
   return result;
 };
 
+const getFit = () => {
+  result.value = [];
+  for (let i = 0; i < data.length; i++) {
+    result.value.push({
+      name: data[i].name,
+      score: Number(data[i].fit),
+    });
+  }
+  result.value = arraySort();
+  return result;
+};
+
 const getSport = () => {
   result.value = [];
   for (let i = 0; i < data.length; i++) {
@@ -298,6 +310,15 @@ const getBest = () => {
       }
     }
   }
+  getFit();
+  for (let i = 0; i < temp.length; i++) {
+    for (let j = 0; j < result.value.length; j++) {
+      if (temp[i].name == result.value[j].name) {
+        temp[i].score += result.value[j].score;
+        break;
+      }
+    }
+  }
   result.value = temp;
   result.value = arraySort();
   return result;
@@ -328,6 +349,7 @@ const chooseCategory = (category) => {
   if (category == "KPI") getKpi();
   if (category == "KPI Team") getKpiTeam();
   if (category == "Best Leader 2022`23") getBest();
+  if (category == "Fit") getFit();
 };
 </script>
 
