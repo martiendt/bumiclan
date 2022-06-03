@@ -13,7 +13,7 @@ const categories = [
   "KPI",
   "KPI Team",
   "Meeting Clan",
-  "Fit  & Proper Test",
+  "Fit & Proper Test",
   "Best Donatur",
   "Best Award",
 ];
@@ -24,13 +24,13 @@ const data = [
     name: "kartika",
     gender: "female",
     email: "kartika.teguh@bumiindogroup.com",
-    fisik: "28.3",
-    mental: "20",
-    kpi: "77.77",
-    kpiTeam: "2",
-    sportTeam: "4",
-    absence: "4",
-    fit: "0",
+    fisik: "27",
+    mental: "25",
+    kpi: "77",
+    kpiTeam: "3",
+    sportTeam: "2",
+    absence: "3",
+    fit: "76",
     donatur: "0",
     award: "0",
   },
@@ -41,12 +41,12 @@ const data = [
     email: "yudha.teguh@bumiindogroup.com",
     fisik: "0",
     mental: "0",
-    kpi: "40.88",
-    kpiTeam: "3",
+    kpi: "0",
+    kpiTeam: "0",
     sportTeam: "0",
-    absence: "4",
+    absence: "0",
     fit: "0",
-    donatur: "5000000",
+    donatur: "0",
     award: "0",
   },
   {
@@ -74,9 +74,9 @@ const data = [
     kpi: "45",
     kpiTeam: "4",
     sportTeam: "2",
-    absence: "4",
+    absence: "3",
     fit: "69.6",
-    donatur: "5.000.000",
+    donatur: "5000000",
     award: "0",
   },
   {
@@ -114,15 +114,15 @@ const data = [
     name: "stefani",
     gender: "female",
     email: "stefani.wijaya@bumiindogroup.com",
-    fisik: "12",
-    mental: "3",
+    fisik: "27.3",
+    mental: "0",
     kpi: "72.66",
-    kpiTeam: "2",
-    sportTeam: "1",
-    absence: "4",
-    fit: "5",
-    donatur: "55",
-    award: "5",
+    kpiTeam: "3",
+    sportTeam: "2",
+    absence: "3",
+    fit: "69.86",
+    donatur: "0",
+    award: "0",
   },
   {
     Timestamp: "5/13/2022 18:45:21",
@@ -195,6 +195,18 @@ const getMental = () => {
     result.value.push({
       name: data[i].name,
       score: (Number(data[i].mental) / 30) * 100,
+    });
+  }
+  result.value = arraySort();
+  return result;
+};
+
+const getDonatur = () => {
+  result.value = [];
+  for (let i = 0; i < data.length; i++) {
+    result.value.push({
+      name: data[i].name,
+      score: Number(data[i].donatur),
     });
   }
   result.value = arraySort();
@@ -349,7 +361,8 @@ const chooseCategory = (category) => {
   if (category == "KPI") getKpi();
   if (category == "KPI Team") getKpiTeam();
   if (category == "Best Leader 2022`23") getBest();
-  if (category == "Fit") getFit();
+  if (category == "Fit & Proper Test") getFit();
+  if (category == "Best Donatur") getDonatur();
 };
 </script>
 
