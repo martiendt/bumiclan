@@ -39,7 +39,7 @@ const data = [
     name: "yudha",
     gender: "male",
     email: "yudha.teguh@bumiindogroup.com",
-    fisik: "0",
+    fisik: "34.6",
     mental: "0",
     kpi: "59.09",
     kpiTeam: "3",
