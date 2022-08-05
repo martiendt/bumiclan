@@ -74,7 +74,7 @@ const data = [
     kpi: "84.33",
     kpiTeam: "4",
     sportTeam: "2",
-    absence: "4",
+    absence: "5",
     fit: "0",
     donatur: "2500000",
     award: "0",
