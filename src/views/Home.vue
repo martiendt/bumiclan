@@ -242,7 +242,7 @@ const getKpiTeam = () => {
   for (let i = 0; i < data.length; i++) {
     result.value.push({
       name: data[i].name,
-      score: Number(data[i].kpiTeam) * 20,
+      score: Number(data[i].kpiTeam) * 25,
     });
   }
   result.value = arraySort();
