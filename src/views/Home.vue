@@ -136,7 +136,7 @@ const data = [
     sportTeam: "4",
     absence: "4",
     fit: "0",
-    donatur: "0",
+    donatur: "350000",
     award: "0",
   },
   {
