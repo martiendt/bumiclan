@@ -140,11 +140,11 @@ const data = [
     award: "0",
   },
   {
-    Timestamp: "5/14/2022 8:34:31",
+    Timestamp: "5/14/2022 8:34:00",
     name: "martiendt",
     gender: "male",
     email: "martiendt@gmail.com",
-    fisik: "31.8",
+    fisik: "08",
     mental: "30",
     kpi: "75.88",
     kpiTeam: "2",
@@ -194,7 +194,7 @@ const getMental = () => {
   for (let i = 0; i < data.length; i++) {
     result.value.push({
       name: data[i].name,
-      score: (Number(data[i].mental) / 31) * 100,
+      score: (Number(data[i].mental) / 30) * 100,
     });
   }
   result.value = arraySort();
@@ -218,7 +218,7 @@ const getAbsence = () => {
   for (let i = 0; i < data.length; i++) {
     result.value.push({
       name: data[i].name,
-      score: (Number(data[i].absence) / 4) * 100,
+      score: (Number(data[i].absence) / 5) * 100,
     });
   }
   result.value = arraySort();
@@ -254,7 +254,7 @@ const getFit = () => {
   for (let i = 0; i < data.length; i++) {
     result.value.push({
       name: data[i].name,
-      score: Number(data[i].fit),
+      score: Number(data[i].fit) * 10,
     });
   }
   result.value = arraySort();
@@ -266,7 +266,7 @@ const getSport = () => {
   for (let i = 0; i < data.length; i++) {
     result.value.push({
       name: data[i].name,
-      score: Number(data[i].sportTeam) * 25,
+      score: Number(data[i].sportTeam) * 20,
     });
   }
   result.value = arraySort();
