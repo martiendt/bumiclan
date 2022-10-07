@@ -144,7 +144,7 @@ const data = [
     name: "martiendt",
     gender: "male",
     email: "martiendt@gmail.com",
-    fisik: "08",
+    fisik: "31.8",
     mental: "30",
     kpi: "75.88",
     kpiTeam: "2",
