@@ -31,7 +31,7 @@ const data = [
     sportTeam: "4",
     absence: "94.44",
     fit: "0",
-    donatur: "11.625.000",
+    donatur: "11625000",
     award: "HC award utk divisi HC",
   },
   {
