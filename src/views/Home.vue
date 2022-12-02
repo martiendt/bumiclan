@@ -24,14 +24,14 @@ const data = [
     name: "kartika",
     gender: "female",
     email: "kartika.teguh@bumiindogroup.com",
-    fisik: "28",
-    mental: "30",
-    kpi: "81.34",
-    kpiTeam: "3",
-    sportTeam: "3",
-    absence: "4",
-    fit: "7",
-    donatur: "562500",
+    fisik: "3",
+    mental: "26",
+    kpi: "78.21",
+    kpiTeam: "2",
+    sportTeam: "4",
+    absence: "0",
+    fit: "0",
+    donatur: "1625000",
     award: "0",
   },
   {
@@ -39,14 +39,14 @@ const data = [
     name: "yudha",
     gender: "male",
     email: "yudha.teguh@bumiindogroup.com",
-    fisik: "34.4",
-    mental: "30",
-    kpi: "76.16",
+    fisik: "2",
+    mental: "34",
+    kpi: "79.72",
     kpiTeam: "2",
-    sportTeam: "3",
-    absence: "5",
-    fit: "8",
-    donatur: "0",
+    sportTeam: "4",
+    absence: "0",
+    fit: "0",
+    donatur: "300000",
     award: "0",
   },
   {
@@ -54,13 +54,13 @@ const data = [
     name: "richmon",
     gender: "male",
     email: "richmonkoriston168@gmail.com",
-    fisik: "35",
-    mental: "30",
-    kpi: "82.8",
+    fisik: "3",
+    mental: "0",
+    kpi: "80.8",
     kpiTeam: "4",
-    sportTeam: "4",
-    absence: "5",
-    fit: "7",
+    sportTeam: "3",
+    absence: "0",
+    fit: "0",
     donatur: "0",
     award: "0",
   },
@@ -69,29 +69,29 @@ const data = [
     name: "robby",
     gender: "male",
     email: "robbyhermawansw@gmail.com",
-    fisik: "32.2",
-    mental: "20",
-    kpi: "80.49",
+    fisik: "5",
+    mental: "0",
+    kpi: "69",
     kpiTeam: "3",
     sportTeam: "5",
-    absence: "5",
-    fit: "5",
+    absence: "0",
+    fit: "0",
     donatur: "500",
-    award: "1",
+    award: "0",
   },
   {
     Timestamp: "5/13/2022 18:28:26",
     name: "richwan",
     gender: "male",
     email: "varofeli@gmail.com",
-    fisik: "34.2",
-    mental: "23",
-    kpi: "73",
+    fisik: "1",
+    mental: "0",
+    kpi: "77.21",
     kpiTeam: "2",
-    sportTeam: "2",
-    absence: "5",
+    sportTeam: "4",
+    absence: "0",
     fit: "0",
-    donatur: "0",
+    donatur: "4000000",
     award: "0",
   },
   {
@@ -99,13 +99,13 @@ const data = [
     name: "edwin",
     gender: "male",
     email: "edwinandreanto@gmail.com",
-    fisik: "37.1",
-    mental: "11",
-    kpi: "80",
-    kpiTeam: "3",
-    sportTeam: "3",
-    absence: "5",
-    fit: "6",
+    fisik: "2",
+    mental: "42",
+    kpi: "84.36",
+    kpiTeam: "2",
+    sportTeam: "4",
+    absence: "0",
+    fit: "0",
     donatur: "0",
     award: "0",
   },
@@ -114,13 +114,13 @@ const data = [
     name: "stefani",
     gender: "female",
     email: "stefani.wijaya@bumiindogroup.com",
-    fisik: "27.9",
-    mental: "9",
-    kpi: "74.4",
-    kpiTeam: "3",
-    sportTeam: "5",
-    absence: "5",
-    fit: "7",
+    fisik: "2",
+    mental: "78",
+    kpi: "73.17",
+    kpiTeam: "4",
+    sportTeam: "3",
+    absence: "0",
+    fit: "0",
     donatur: "100000",
     award: "0",
   },
@@ -129,13 +129,13 @@ const data = [
     name: "dewi",
     gender: "female",
     email: "dewiteguh86@gmail.com",
-    fisik: "32.1",
-    mental: "23",
-    kpi: "74.9",
-    kpiTeam: "4",
-    sportTeam: "5",
-    absence: "5",
-    fit: "5",
+    fisik: "3",
+    mental: "50",
+    kpi: "73.4",
+    kpiTeam: "3",
+    sportTeam: "4",
+    absence: "0",
+    fit: "0",
     donatur: "0",
     award: "0",
   },
@@ -144,14 +144,14 @@ const data = [
     name: "martiendt",
     gender: "male",
     email: "martiendt@gmail.com",
-    fisik: "31.8",
-    mental: "30",
-    kpi: "75.88",
+    fisik: "5",
+    mental: "64",
+    kpi: "78.41",
     kpiTeam: "2",
-    sportTeam: "5",
-    absence: "5",
-    fit: "6",
-    donatur: "200000",
+    sportTeam: "4",
+    absence: "0",
+    fit: "0",
+    donatur: "150000",
     award: "0",
   },
 ];
@@ -171,18 +171,9 @@ const arraySort = () => {
 const getFisik = () => {
   result.value = [];
   for (let i = 0; i < data.length; i++) {
-    let a = 0;
-    if (data[i].gender === "male") {
-      a = 36 - Number(data[i].fisik);
-    } else {
-      a = 29 - Number(data[i].fisik);
-    }
-    let b = (10 - a) * 10;
-    let c = b < 0 ? 0 : b;
-    if (c > 100) c = 100;
     result.value.push({
       name: data[i].name,
-      score: c,
+      score: (Number(data[i].fisik) / 5) * 100,
     });
   }
   result.value = arraySort();
@@ -194,7 +185,7 @@ const getMental = () => {
   for (let i = 0; i < data.length; i++) {
     result.value.push({
       name: data[i].name,
-      score: (Number(data[i].mental) / 30) * 100,
+      score: Number(data[i].mental),
     });
   }
   result.value = arraySort();
@@ -218,7 +209,7 @@ const getAbsence = () => {
   for (let i = 0; i < data.length; i++) {
     result.value.push({
       name: data[i].name,
-      score: (Number(data[i].absence) / 5) * 100,
+      score: (Number(data[i].absence) / 4) * 100,
     });
   }
   result.value = arraySort();
@@ -266,7 +257,7 @@ const getSport = () => {
   for (let i = 0; i < data.length; i++) {
     result.value.push({
       name: data[i].name,
-      score: Number(data[i].sportTeam) * 20,
+      score: Number(data[i].sportTeam) * 25,
     });
   }
   result.value = arraySort();
