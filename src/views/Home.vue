@@ -209,7 +209,7 @@ const getAbsence = () => {
   for (let i = 0; i < data.length; i++) {
     result.value.push({
       name: data[i].name,
-      score: (Number(data[i].absence) / 4) * 100,
+      score: Number(data[i].absence),
     });
   }
   result.value = arraySort();
