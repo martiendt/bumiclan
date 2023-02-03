@@ -114,7 +114,7 @@ const data = [
     name: "stefani",
     gender: "female",
     email: "stefani.wijaya@bumiindogroup.com",
-    fisik: "100",
+    fisik: "5",
     mental: "95",
     kpi: "85.25",
     kpiTeam: "3",
